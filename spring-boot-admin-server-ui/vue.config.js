@@ -20,6 +20,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
+  baseUrl: './',
   outputDir: 'target/dist',
   assetsDir: 'assets',
   pages: {
@@ -34,7 +35,7 @@ module.exports = {
       filename: 'login.html'
     }
   },
-  chainWebpack: config => {
+  chainWebpack: config => {	
     config.resolve.alias.set('@', resolve(__dirname, 'src/main/frontend'));
     config.module.rule('html')
       .test(/\.html$/)
